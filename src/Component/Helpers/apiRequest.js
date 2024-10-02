@@ -3,7 +3,9 @@ import { BASE_URL } from './constant';
 
 // Generic function to make API requests, accepts token as a parameter
 const apiRequest = async (method, endpoint, token, data = null) => {
+  console.log("Token", token)
   try {
+    
     const config = {
       method,
       url: `${BASE_URL}${endpoint}`,
