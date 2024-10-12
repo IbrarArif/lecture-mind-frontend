@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaPlayCircle, FaCommentDots, FaLightbulb, FaRocket, FaSun, FaMoon, FaUsers, FaLaptopCode, FaChartLine, FaCheckCircle } from 'react-icons/fa';
+import { FaPlayCircle, FaCommentDots, FaLightbulb, FaRocket, FaSun, FaMoon, FaUsers, FaLaptopCode, FaChartLine, FaCheckCircle, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '@clerk/clerk-react';
 
@@ -33,14 +33,14 @@ function LandingPage() {
 
       <section className={`container mx-auto px-4 py-12 ${isDarkMode ? 'dark:text-white' : ''}`}>
         <div className="text-center mb-8">
-          <h2 className={`text-4xl font-bold text-gray-800 mb-2 ${isDarkMode ? 'dark:text-white' : ''}`}>
+          <h2 className={`text-6xl font-bold text-gray-800 mb-2 ${isDarkMode ? 'dark:text-white' : ''}`}>
             Unlock the Secrets of YouTube Videos
           </h2>
-          <p className={`text-lg text-gray-600 ${isDarkMode ? 'dark:text-gray-400' : ''}`}>
+          <p className={`text-xl text-gray-600 ${isDarkMode ? 'dark:text-gray-400' : ''}`}>
             Effortlessly chat with any YouTube video and instantly understand the key points.
           </p>
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col md:flex-row items-center transition-transform transform justify-center gap-4 duration-300 ease-in-out hover:scale-105">
           <div className={`bg-white rounded-lg shadow-md p-6 text-center w-full md:w-1/3 ${isDarkMode ? 'dark:bg-gray-800' : ''}`}>
             <FaPlayCircle className={`text-5xl text-blue-500 mb-4 ${isDarkMode ? 'dark:text-blue-500' : ''}`} />
             <h3 className={`text-xl font-bold text-gray-800 mb-2 ${isDarkMode ? 'dark:text-white' : ''}`}>
@@ -207,9 +207,17 @@ function LandingPage() {
         </div>
       </section>
 
-      <footer className={`bg-gray-800 text-white py-4 px-4 ${isDarkMode ? 'dark:bg-gray-900' : ''}`}>
+      <footer className={`bg-gray-800 text-white py-4 w-full px-4 ${isDarkMode ? 'dark:bg-gray-900' : ''}`}>
         <div className="container mx-auto text-center">
-          <p>© 2023 Lecture Mind. All rights reserved.</p>
+          <p>Developed by</p>
+          <p className='text-xl font-medium'>Malik Ibrar</p>
+          <p>© 2024 Lecture Mind. All rights reserved.</p>
+          <div className="flex justify-center mt-2">
+            <a href="http://linkedin.com/in/malik-ibrar" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className='text-4xl'/> 
+            </a>
+           
+          </div>
         </div>
       </footer>
     </div>

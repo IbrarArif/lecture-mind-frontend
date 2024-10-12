@@ -14,7 +14,7 @@ const Sidebar = ({ isExpanded, toggleSidebar }) => {
   const { user } = useUser(); // Access user data
 
   return (
-    <div className={`fixed top-0 left-0 h-full flex flex-col bg-gray-800 text-white transition-all duration-300 ease-in-out ${isExpanded ? 'w-60' : 'w-20'}`}>
+    <div className={`fixed top-0 left-0 h-full flex flex-col bg-gray-800 text-white transition-all duration-500 ease-in-out ${isExpanded ? 'w-60' : 'w-20'}`}>
       {/* Toggle Button */}
       <button
         className="w-full h-16 flex items-center justify-center bg-gray-700"

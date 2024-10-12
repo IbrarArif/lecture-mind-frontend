@@ -42,9 +42,7 @@ function App() {
             {/* Public Routes */}
             <Route path="/" element={<LandingPage />} />
             <Route path="/sign-in" element={<SignIn />} />
-            
-            {/* Protected Routes */}
-            <Route
+                        <Route
               path="/dashboard"
               element={
                 <ProtectedRoute>
@@ -60,6 +58,14 @@ function App() {
                 </ProtectedRoute>
               }
             />
+             {/* <Route
+              path="/test"
+              element={
+                <ProtectedRoute>
+                  <Header/>
+                </ProtectedRoute>
+              }
+            /> */}
             <Route
               path="/youtube_content"
               element={
