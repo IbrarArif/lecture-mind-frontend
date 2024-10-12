@@ -15,6 +15,9 @@ const Hero = () => {
           <img src="https://demo.themesberg.com/landwind/images/hero.png" alt="AI app image" />
         </div>
       </div>
+      <div className="center">
+        Hello World 
+      </div>
     </section>
   );
 };
