@@ -11,7 +11,9 @@ function LandingPage() {
     setIsDarkMode(!isDarkMode);
     document.documentElement.classList.toggle('dark', !isDarkMode);
   };
-
+ const handle = ( ) => {
+   console.log("Welcome to my app")
+ }
   const handleNavigate = () => {
     if (isSignedIn) {
       navigate('/dashboard');
