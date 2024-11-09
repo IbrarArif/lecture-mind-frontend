@@ -65,7 +65,7 @@ const Chatbot = () => {
   return (
     <>
       <div className="w-full h-screen bg-gray-100 text-gray-900 flex flex-col overflow-auto">
-        <main className="flex-1 p-4 overflow-y-auto flex flex-col md:flex-row">
+        <main className="flex-1 p-4 overflow-y-auto flex flex-col-reverse md:flex-row">
           <div className="w-full bg-white p-4 rounded-lg h-full flex flex-col shadow-md md:w-2/3 md:mr-4">
             {/* Chatbot section */}
             <div className="flex-1 overflow-y-auto">
@@ -152,7 +152,7 @@ const Chatbot = () => {
             </div>
           </div>
           {/* Youtube Video section */}
-          <div className="w-full bg-white p-4 rounded-lg h-full flex flex-col shadow-md md:w-1/2">
+          <div className="w-full bg-white my-5 rounded-lg h-full flex flex-col shadow-md md:my-0 md:w-1/2">
             {selectedVideo ? (
               <>
               <iframe
@@ -171,16 +171,16 @@ const Chatbot = () => {
             ) : (
               // Display placeholder content when no video is selected
               <div className="flex items-center justify-center w-full h-full">
-                <p className="text-gray-400 text-lg">Please select a video</p>
+                <p className="text-gray-400 text-lg text-center">Please select a video</p>
               </div>
             )}
           </div>
         </main>
         {/* Video selection modal */}
         {showVideoList && (
-          <div className=" w-full fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-10">
-            <div className="bg-white rounded-lg shadow-xl p-6 w-1/3 h-3/4 overflow-y-auto">
-              <h3 className="text-lg font-semibold mb-4">Select a Video</h3>
+          <div className=" w-full fixed inset-0 py-10 bg-gray-500 bg-opacity-75 flex items-center justify-center z-10">
+            <div className="bg-white rounded-lg shadow-xl p-5 w-5/6 h-5/6 overflow-y-auto md:w-1/3  md:h-3/4">
+              <h3 className="text-lg font-semibold mb-4 text-center">Select a Video</h3>
               <ul>
                 {videoList.map((video) => (
                   <li

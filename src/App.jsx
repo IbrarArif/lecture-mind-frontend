@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { SignedIn, SignedOut, SignIn, UserProfile, useUser } from "@clerk/clerk-react";
 import LandingPage from "./Component/LandingPage/LandingPage";
 import Notes from "./Component/Pages/Notes";
+import Header from './Component/LandingPage/Header'
 
 // ProtectedRoute ensures only signed-in users can access specific routes
 function ProtectedRoute({ children }) {
@@ -27,19 +28,17 @@ function App() {
     setIsExpanded((prev) => !prev);
   };
 
-  // For routes that don't need the sidebar (like the landing page)
   const isLandingPage = location.pathname === "/";
+
 
   return (
     <div className="flex">
-      <SignedIn>
-        {/* Sidebar is only shown when it's not the landing page */}
+  
         {!isLandingPage && (
           <Sidebar isExpanded={isExpanded} toggleSidebar={toggleSidebar} />
         )}
-        <div className={`flex-grow ${!isLandingPage ? (isExpanded ? 'ml-60' : 'ml-20') : ''} transition-all duration-300`}>
+        <div className={`flex-grow ${!isLandingPage ? (isExpanded ? 'ml-60 md:ml-60' : 'ml-12 md:ml-20') : ''} transition-all duration-300`}>
           <Routes>
-            {/* Public Routes */}
             <Route path="/" element={<LandingPage />} />
             <Route path="/sign-in" element={<SignIn />} />
                         <Route
@@ -55,17 +54,17 @@ function App() {
               element={
                 <ProtectedRoute>
                   <LoadAndVectorize />
-                </ProtectedRoute>
+                 </ProtectedRoute>
               }
             />
-             {/* <Route
+             <Route
               path="/test"
               element={
-                <ProtectedRoute>
+               
                   <Header/>
-                </ProtectedRoute>
+               
               }
-            /> */}
+            />
             <Route
               path="/youtube_content"
               element={
@@ -102,7 +101,7 @@ function App() {
             />
           </Routes>
         </div>
-      </SignedIn>
+     
       <SignedOut>
         <div className="flex-grow flex justify-center items-center">
           <SignIn />
